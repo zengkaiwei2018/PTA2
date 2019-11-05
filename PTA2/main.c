@@ -1,31 +1,24 @@
 #include<stdio.h>
-int main()
+int main(void)
 {
-    int a[11],i,n,X,k;
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
-        scanf("%d",&a[i]);
-    scanf("%d",&X);
-    if(X<a[0])
-    {for(k=n-1;k>=0;k--)
-        a[k+1]=a[k];
-        a[0]=X;
-    }
-    else if(X>a[n-1])
-        a[n]=X;
-    
-    else
-    {for(i=0;i<n-1;i++)
+    int i,b=0,c=0,N,X;
+    scanf("%d %d\n",&N,&X);
+    int a[N];
+    c=N;
+    for(i=0;i<c;i++)
     {
-        if(a[i]<X&&a[i+1]>X)
-        { for(k=n-1;k>i;k--)
-            a[k+1]=a[k];
-            a[i+1]=X;
+        scanf("%d",&a[i]);
+        if(a[i]==X)
+        {
+            b=1;
+            printf("%d",i);
             break;
         }
     }
+    if(b==0)
+    {
+        printf("Not Found");
     }
-    for(i=0;i<=n;i++)
-        printf("%d ",a[i]);
+    
     return 0;
-}
+    }  
